@@ -22,12 +22,12 @@ class CameraController {
         }
     }
 
-    takePhoto() {
-        this.cameraController.takePhoto();
-    }
-
     getStatus() {
         return this.cameraController.getStatus();
+    }
+
+    takePhoto() {
+        this.cameraController.takePhoto();
     }
 
 }
