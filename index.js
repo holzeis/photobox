@@ -1,8 +1,8 @@
 #! /usr/bin/env node
 'use strict'
 
-const CameraCommander = require('./app/cameraController');
+const CameraController = require('./app/cameraController');
 
-let c = new CameraCommander();
+let c = new CameraController();
 
 c.init();

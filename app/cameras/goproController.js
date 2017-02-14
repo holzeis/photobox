@@ -2,7 +2,7 @@
 
 const Logger = require('./../logger');
 
-class GoproCommander {
+class GoproController {
 
     constructor () {
         this.ip = '10.5.5.9'; /* Gopro ip, should be 10.5.5.9 except in remote mode */
@@ -11,7 +11,7 @@ class GoproCommander {
         this.logger = new Logger();
     }
 
-    run() {
+    takePhoto() {
         if (this.ip && this.broadcastip && this.mac) {
             this.logger.log('Connecting to gopro ' + this.ip);
         } else {
@@ -24,4 +24,4 @@ class GoproCommander {
     }
 }
 
-module.exports = GoproCommander;
+module.exports = GoproController;

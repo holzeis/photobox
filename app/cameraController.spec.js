@@ -1,72 +1,71 @@
 'use strict'
 
+const CameraController = require('./cameraController');
 const GoproController = require('./cameras/goproController');
-const Logger = require('./logger');
-const DefaultIP = '10.5.5.9';
-const DefaultBroadcast = '10.5.5.255';
-const DefaultMac = 'D6:D9:19:5B:30:68';
-const DefaultGreeting = 'Connecting to gopro 10.5.5.9';
-const DefaultCameraCommanderStatus = 'status OK!';
+const ClCameraController = require('./cameras/clCameraController');
+const DefaultIP = '10.5.5.90';
 
+describe('cameraController', () => {
 
-describe('GoproController', () => {
+    describe('Default Constructor', () => {
 
-    describe('Constructor', () => {
-
-        it('should be created with three properties: ip, broadcastip, and mac', () => {
-            let sut = new GoproController();
+        it('should have property ip with undefined', () => {
+            let sut = new CameraController();
             expect(sut).to.have.property('ip');
-            expect(sut).to.have.property('broadcastip');
-            expect(sut).to.have.property('mac');
+            expect(sut.ip).to.be.undefined;
         });
 
-        it('should have default values', () => {
-            let sut = new GoproController();
-            expect(sut.ip).to.equal(DefaultIP);
-            expect(sut.broadcastip).to.equal(DefaultBroadcast);
-            expect(sut.mac).to.equal(DefaultMac);
+        it('should initialize a CL Camera Controller', () => {
+            let sut = new CameraController();
+            sut.init();
+            expect(sut.cameraController).to.be.an.instanceof(ClCameraController);
         });
 
     });
 
-    describe('Run', () => {
-        it('should log default values when started', () => {
-            let logger = new Logger();
-            let stub = sinon.stub(logger, 'log').returns();
-            let sut = new GoproController();
-            sut.logger = logger;
+    describe('GoProCamera Constructor', () => {
 
-            sut.run();
-
-            expect(logger.log).to.have.been.calledOnce;
-            expect(logger.log).to.have.been.calledWith(DefaultGreeting);
-
-            stub.restore();
+        it('should create default clCameraController', () => {
+            let sut = new CameraController(DefaultIP);
+            expect(sut).to.have.property('ip');
         });
 
-        it('should log default ip when started', () => {
-            let logger = new Logger();
-            let stub = sinon.stub(logger, 'log').returns();
-            let sut = new GoproController();
-            sut.logger = logger;
-
-            sut.run();
-
-            expect(logger.log).to.have.been.calledOnce;
-            expect(logger.log).to.have.been.calledWith(DefaultGreeting);
-
-            stub.restore();
+        it('should init a ClController', () => {
+            let sut = new CameraController(DefaultIP);
+            sut.init();
+            expect(sut.cameraController).to.be.an.instanceof(GoproController);
         });
+
     });
 
-    describe('Status', () => {
+    describe('getStatus', () => {
+        it('should call get status of specific controller', () => {
+            let clCameraController = new ClCameraController();
+            let stub = sinon.stub(clCameraController, 'getStatus').returns();
+            let sut = new CameraController();
+            sut.cameraController = clCameraController;
+
+            sut.getStatus();
+
+            expect(clCameraController.getStatus).to.have.been.calledOnce;
+
+            stub.restore();
+        });
+
+    });
+
+    describe('takePhoto', () => {
         it('should show the camera status', () => {
-            let logger = new Logger();
-            let sut = new GoproController();
+            let clCameraController = new ClCameraController();
+            let stub = sinon.stub(clCameraController, 'takePhoto').returns();
+            let sut = new CameraController();
+            sut.cameraController = clCameraController;
 
-            let status = sut.getStatus();
+            sut.takePhoto();
 
-            expect(status).to.equal(DefaultCameraCommanderStatus);
+            expect(clCameraController.takePhoto).to.have.been.calledOnce;
+
+            stub.restore();
         });
 
     });
