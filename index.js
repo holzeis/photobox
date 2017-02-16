@@ -16,8 +16,6 @@ let logger = new Logger();
 let gpioController = new GpioController();
 gpioController.init();
 
-setTimeout(gpioController.turnLEDOn(), 3000);
-
-setTimeout(gpioController.turnLEDOff(), 3000);
+gpioController.startButtonListener();
 
 
