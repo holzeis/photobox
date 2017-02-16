@@ -5,7 +5,6 @@ const GpioPin = require('./GPIOPin');
 
 const wpi = require('wiring-pi');
 
-
 class GpioController {
 
     constructor (ipAddress) {
@@ -29,15 +28,15 @@ class GpioController {
     }
 
     turnLEDOn() {
-        wpi.digitalWrite(this.ledPin1.number, this.ledPin1.status = 1);
-        wpi.digitalWrite(this.ledPin2.number, this.ledPin2.status = 1);
-        wpi.digitalWrite(this.butonLedPin.number, this.ledPin2.status = 1);
+        wpi.digitalWrite(this.ledPin1.number, 1);
+        wpi.digitalWrite(this.ledPin2.number, 1);
+        wpi.digitalWrite(this.butonLedPin.number, 1);
     }
 
     turnLEDOff() {
-        wpi.digitalWrite(this.ledPin1.number, this.ledPin1.status = 0);
-        wpi.digitalWrite(this.ledPin2.number, this.ledPin2.status = 0);
-        wpi.digitalWrite(this.butonLedPin.number, this.butonLedPin.status = 0);
+        wpi.digitalWrite(this.ledPin1.number, 0);
+        wpi.digitalWrite(this.ledPin2.number, 0);
+        wpi.digitalWrite(this.butonLedPin.number, 0);
     }
 
 }
