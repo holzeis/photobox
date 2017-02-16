@@ -17,7 +17,7 @@ class GpioController {
     }
 
     init() {
-        wpi.setup('wpi');
+        wpi.setup('phys');
         wpi.pinMode(this.ledPin1, wpi.OUTPUT);
         wpi.pinMode(this.ledPin2, wpi.OUTPUT);
         wpi.pinMode(this.butonLedPin, wpi.OUTPUT);
