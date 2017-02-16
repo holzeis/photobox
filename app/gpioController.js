@@ -45,7 +45,7 @@ class GpioController {
     startButtonListener() {
         console.log("starting listening");
         let status = this.buttonPin.status;
-        console.log('current button status: ' + this.butonLedPin);
+        console.log('current button status: ' + this.butonLedPin.status);
         wpi.wiringPiISR(this.buttonPin.number, wpi.INT_EDGE_BOTH, () =>  {
             if (wpi.digitalRead(this.buttonPin.number)) {
                 if (false === status) {
@@ -55,7 +55,6 @@ class GpioController {
             }
             else {
                 status = 0;
-                clearTimeout(clock);
             }
         });
 
