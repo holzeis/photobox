@@ -6,7 +6,7 @@
   "scripts": {
     "example": "node index.js",
     "test": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha",
-    "tdd:mac": "./node_modules/.bin/mocha -w"
+    "tdd": "./node_modules/.bin/mocha -w"
   },
   "author": {
     "name": "Philipp Hoenisch"
@@ -21,6 +21,8 @@
   },
   "dependencies": {
     "goproh4": "^0.4.2",
-    "rxjs": "^5.1.1"
+    "proxyquire": "^1.7.11",
+    "rxjs": "^5.1.1",
+    "wiring-pi": "^2.1.0"
   }
 }
