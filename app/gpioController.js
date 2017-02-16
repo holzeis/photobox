@@ -1,7 +1,7 @@
 'use strict'
 
 const Logger = require('./logger');
-const GpioPin = require('./GpioPin');
+const GpioPin = require('./GPIOPin');
 //const WiringPiController = require('./wiringPiController');
 
 const wpi = require('wiring-pi');
