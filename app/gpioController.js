@@ -28,12 +28,14 @@ class GpioController {
     }
 
     turnLEDOn() {
+        this.logger.log("turning leds on");
         wpi.digitalWrite(this.ledPin1.number, 1);
         wpi.digitalWrite(this.ledPin2.number, 1);
         wpi.digitalWrite(this.butonLedPin.number, 1);
     }
 
     turnLEDOff() {
+        this.logger.log("turning leds off");
         wpi.digitalWrite(this.ledPin1.number, 0);
         wpi.digitalWrite(this.ledPin2.number, 0);
         wpi.digitalWrite(this.butonLedPin.number, 0);
