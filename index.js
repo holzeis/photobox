@@ -18,3 +18,4 @@ gpioController.init();
 
 gpioController.turnLEDOn();
 
+gpioController.turnLEDOff();

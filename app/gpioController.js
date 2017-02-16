@@ -18,10 +18,10 @@ class GpioController {
 
     init() {
         wpi.setup('phys');
-        wpi.pinMode(this.ledPin1, wpi.OUTPUT);
-        wpi.pinMode(this.ledPin2, wpi.OUTPUT);
-        wpi.pinMode(this.butonLedPin, wpi.OUTPUT);
-        wpi.pinMode(this.buttonPin, wpi.INPUT);
+        wpi.pinMode(this.ledPin1.number, wpi.OUTPUT);
+        wpi.pinMode(this.ledPin2.number, wpi.OUTPUT);
+        wpi.pinMode(this.butonLedPin.number, wpi.OUTPUT);
+        wpi.pinMode(this.buttonPin.number, wpi.INPUT);
     }
 
     getStatus() {
@@ -29,15 +29,15 @@ class GpioController {
     }
 
     turnLEDOn() {
-        wpi.digitalWrite(this.ledPin1, this.ledPin1.status = 1);
-        wpi.digitalWrite(this.ledPin2, this.ledPin2.status = 1);
-        wpi.digitalWrite(this.butonLedPin, this.ledPin2.status = 1);
+        wpi.digitalWrite(this.ledPin1.number, this.ledPin1.status = 1);
+        wpi.digitalWrite(this.ledPin2.number, this.ledPin2.status = 1);
+        wpi.digitalWrite(this.butonLedPin.number, this.ledPin2.status = 1);
     }
 
     turnLEDOff() {
-        wpi.digitalWrite(this.ledPin1, this.ledPin1.status = 0);
-        wpi.digitalWrite(this.ledPin2, this.ledPin2.status = 0);
-        wpi.digitalWrite(this.butonLedPin, this.butonLedPin.status = 0);
+        wpi.digitalWrite(this.ledPin1.number, this.ledPin1.status = 0);
+        wpi.digitalWrite(this.ledPin2.number, this.ledPin2.status = 0);
+        wpi.digitalWrite(this.butonLedPin.number, this.butonLedPin.status = 0);
     }
 
 }
