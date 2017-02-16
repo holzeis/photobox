@@ -2,7 +2,7 @@
 
 const GpioController = require('./gpioController');
 const Logger = require('./logger');
-const GpioPin = require('./gpioPin');
+const GpioPin = require('./GPIOPin');
 
 describe('gpioController', () => {
 
