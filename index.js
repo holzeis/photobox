@@ -18,4 +18,6 @@ gpioController.init();
 
 gpioController.turnLEDOn();
 
-gpioController.turnLEDOff();
+setTimeout(gpioController.turnLEDOff(), 3000);
+
+
