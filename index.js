@@ -1,5 +1,5 @@
 #! /usr/bin/env node
-'use strict'
+'use strict';
 
 const CameraController = require('./app/cameraController');
 const Logger = require('./app/logger');

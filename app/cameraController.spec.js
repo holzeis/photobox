@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const CameraController = require('./cameraController');
 const GoproController = require('./cameras/goproController');

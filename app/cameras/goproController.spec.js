@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const GoproController = require('./goproController');
 const Logger = require('./../logger');

@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const clCameraController = require('./clCameraController');
 const Logger = require('./../logger');

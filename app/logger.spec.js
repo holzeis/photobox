@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const Logger = require('./logger');
 const TestString = '    ✓';  // nice hack to keep the mocha report clean. LOL.

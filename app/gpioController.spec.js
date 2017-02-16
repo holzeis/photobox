@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const GpioController = require('./gpioController');
 const Logger = require('./logger');
