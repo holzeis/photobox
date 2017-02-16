@@ -45,14 +45,13 @@ class GpioController {
     startButtonListener() {
         console.log("starting listening");
         wpi.wiringPiISR(this.buttonPin.number, wpi.INT_EDGE_BOTH, (delta) => {
-            console.log("delta: " + delta);
             if (wpi.digitalRead(this.buttonPin.number)) {
-                console.log('buttonLED On');
-                this.turnLEDOn();
-            }
-            else {
                 console.log('buttonLED Off');
                 this.turnLEDOff();
+            }
+            else {
+                console.log('buttonLED On');
+                this.turnLEDOn();
             }
         });
 
