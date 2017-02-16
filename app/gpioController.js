@@ -43,9 +43,11 @@ class GpioController {
     }
 
     startButtonListener() {
-        let status = this.butonLedPin.status;
-        wpi.wiringPiISR(this.butonLedPin.number, wpi.INT_EDGE_BOTH, () =>  {
-            if (wpi.digitalRead(this.butonLedPin.number)) {
+        console.log("starting listening");
+        let status = this.buttonPin.status;
+        console.log('current button status: ' + this.butonLedPin);
+        wpi.wiringPiISR(this.buttonPin.number, wpi.INT_EDGE_BOTH, () =>  {
+            if (wpi.digitalRead(this.buttonPin.number)) {
                 if (false === status) {
                     status = 1;
                     handleButton();
@@ -58,7 +60,7 @@ class GpioController {
         });
 
         function handleButton() {
-            if (wpi.digitalRead(this.butonLedPin.number)) {
+            if (wpi.digitalRead(this.buttonPin.number)) {
                 console.log('On');
                 this.turnLEDOn();
             } else {
