@@ -2,11 +2,11 @@
   "name": "nodejs-es6-mocha",
   "version": "1.0.0",
   "description": "Simple project which might be usefull in a photo booth.",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-    "start": "nodemon lib/index.js --exec babel-node --presets es2015,stage-2",
+    "start": "nodemon lib/main.js --exec babel-node --presets es2015,stage-2",
     "build": "babel lib -d dist",
-    "serve": "node dist/index.js",
+    "serve": "node dist/main.js",
     "test": "mocha --compilers js:babel-register",
     "tdd": "mocha -w --compilers js:babel-register"
   },
