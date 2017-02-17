@@ -9,28 +9,11 @@ global.sinon = require('sinon');
 global.sinonChai = require('sinon-chai');
 global.chai.use(global.sinonChai);
 
-global.wiringpiStub = {
-    OUTPUT: 'OUTPUT',
-    INPUT: 'INPUT',
-    PUD_UP: 'PUD_UP',
-    INT_EDGE_BOTH: 'INT_EDGE_BOTH',
+global.onoffStub = {
+    Gpio (pin, mode, direction) {
 
-    setup(val) {
-        console.log("wiring stub set up with ", val);
-    },
-    pinMode(pin, mode) {
-        console.log("pin %s setup with mode %s", pin, mode);
-    },
-    pullUpDnControl(pin, mode) {
-        console.log("pin %s setup with mode %s", pin, mode);
-    },
-    wiringPiISR(pin, mode) {
-        console.log("listening on %s with mode %s", pin, mode);
-    },
-    digitalWrite(pin, mode) {
-        console.log("seting %s to %s", pin, mode);
     }
 };
 
 global.proxyquire = require('proxyquire').noCallThru();
-proxyquire('../lib/gpioController', {'wiring-pi': wiringpiStub});
+proxyquire('../lib/gpioController', {'onoff': onoffStub});
