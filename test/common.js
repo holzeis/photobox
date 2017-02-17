@@ -26,6 +26,9 @@ global.wiringpiStub = {
     },
     wiringPiISR(pin, mode) {
         console.log("listening on %s with mode %s", pin, mode);
+    },
+    digitalWrite(pin, mode) {
+        console.log("seting %s to %s", pin, mode);
     }
 };
 
