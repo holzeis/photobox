@@ -13,6 +13,7 @@ global.wiringpiStub = {
     OUTPUT: 'OUTPUT',
     INPUT: 'INPUT',
     PUD_UP: 'PUD_UP',
+    INT_EDGE_BOTH: 'INT_EDGE_BOTH',
 
     setup(val) {
         console.log("wiring stub set up with ", val);
@@ -24,7 +25,7 @@ global.wiringpiStub = {
         console.log("pin %s setup with mode %s", pin, mode);
     },
     wiringPiISR(pin, mode) {
-        console.log("pin %s setup with mode %s", pin, mode);
+        console.log("listening on %s with mode %s", pin, mode);
     }
 };
 
