@@ -18,6 +18,10 @@ class Gpio {
     }
     unexport() {
     }
+    write(val, callback) {
+        callback(null, "1");
+    }
+
 }
 global.onoffStub.Gpio = Gpio;
 
