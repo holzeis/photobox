@@ -2,9 +2,8 @@
   "name": "nodejs-es6-mocha",
   "version": "1.0.0",
   "description": "Simple project which might be usefull in a photo booth.",
-  "main": "main.js",
   "scripts": {
-    "start": "nodemon lib/main.js --exec babel-node --presets es2015,stage-2",
+    "start": "nodemon main.js --exec babel-node --presets es2015,stage-2",
     "gopro": "nodemon goproHelloWorld.js --exec babel-node --presets es2015,stage-2",
     "build": "babel lib -d dist",
     "serve": "node dist/main.js",
@@ -31,6 +30,7 @@
     "goproh4": "^0.4.2",
     "onoff": "^1.1.2",
     "proxyquire": "^1.7.11",
+    "rxjs": "^5.2.0",
     "rxjs-es": "^5.0.0-beta.12"
   }
 }
