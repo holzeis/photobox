@@ -5,6 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "nodemon lib/main.js --exec babel-node --presets es2015,stage-2",
+    "gopro": "nodemon goproHelloWorld.js --exec babel-node --presets es2015,stage-2",
     "build": "babel lib -d dist",
     "serve": "node dist/main.js",
     "test": "mocha --compilers js:babel-register",
